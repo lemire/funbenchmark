@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <vector>
 #include <unordered_set>
-
+#include <cassert>
 
 class ZRandom {
 
