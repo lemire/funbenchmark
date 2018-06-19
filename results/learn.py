@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
-for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.txt"]:
+for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.txt", "armA57/hashbench.txt"]:
   print("file: ", file)
   dataset = pd.read_csv(file, delimiter=" ")
   X=dataset.iloc[:,1:4]
@@ -24,10 +24,10 @@ for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.t
   print('relative Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred)/y_test.mean())
 
   #dataset.plot(x='Hours', y='Scores', style='o')
-  #plt.title('Hours vs Percentage')
-  #plt.xlabel('Hours Studied')
-  #plt.ylabel('Percentage Score')
+  plt.title(file)
   f = plt.figure()
+  plt.ylim([y.min(), y.max()])
+  plt.xlim([y.min(), y.max()])
   plt.scatter(y_test, y_pred)
   plt.scatter(y_test, y_test)
 
@@ -41,7 +41,7 @@ for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.t
   print()
 
 
-for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.txt"]:
+for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.txt", "armA57/hashbench.txt"]:
   print("file: ", file)
   dataset = pd.read_csv(file, delimiter=" ")
   X=dataset.iloc[:,2:4]
@@ -58,7 +58,11 @@ for file in ["skylake/vecbench.txt", "skylake/hashbench.txt", "armA57/vecbench.t
   print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
   print('relative Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred)/y_test.mean())
   f = plt.figure()
+  plt.title(file + " (No Max)")
   plt.scatter(y_test, y_pred)
+  plt.scatter(y_test, y_test)
+  plt.ylim([y.min(), y.max()])
+  plt.xlim([y.min(), y.max()])
   plt.ylabel('predicted running time')
   plt.xlabel('actual running time')
   filename = file+"NoMax.pdf"
