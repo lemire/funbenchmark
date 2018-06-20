@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     uint32_t N1 = rand() % Max;
     uint32_t N2 = rand() % Max;
     hashset set1 = getRandomSet(c, N1, Max);
-    hashset set2 = getRandomSet(c, N1, Max);
+    hashset set2 = getRandomSet(c, N2, Max);
 
     auto start = std::chrono::system_clock::now();
 
