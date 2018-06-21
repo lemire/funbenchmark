@@ -1,0 +1,13 @@
+﻿Line 1 to 21:
+Intro (maybe old stuff)
+
+Line 22 to 32:
+SQL Statements for preparing EXTENDEDPRICE
+
+Line 34 to 104,390 (104,356 lines):
+SQL statements for >, <, <=, >=, = ,
+each with result;
+that is, 52,178 queries
+and 10,435 values
+
+Values from 901 to 11,336 (10,435 different)

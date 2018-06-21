@@ -1,0 +1,26 @@
+﻿Line 22 to 32:
+SQL Statements for preparing EXTENDEDPRICE
+
+Line 34 to 86743 (86709 lines):
+SQL statements for EXTENDEDPRICE
+
+Line 86744 to 86755:
+SQL statements for preparing QUANTITY
+
+Line 86756 to 86800 (45 lines):
+SQL statements for QUANTITY
+
+Line 86801 to 86812:
+SQL statements for preparing DISCOUNT
+
+Line 86813 to 86817 (5 lines):
+SQL statements for DISCOUNT
+
+Line 86818 to 173527 (86709 lines):
+Results for EXTENDEDPRICE
+
+Line 173528 to 173572 (45 lines):
+Results for QUANTITY
+
+Line 173573 to 173577 (5 lines):
+Results for DISCOUNT
