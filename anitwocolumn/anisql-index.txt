@@ -1,0 +1,28 @@
+﻿Line 1 to 21:
+Intro (maybe old stuff)
+
+Line 22 to 33:
+SQL statements for preparing EXTENDEDPRICE
+
+Line 34 to 45:
+SQL statements for preparing QUALITY
+
+Line 46 to 37,749 (37,704 lines):
+
+18,852 statements:
+SELECT COUNT(*) FROM LineItem
+WHERE L_ExtendedPrice t_1 const2 AND L_Quantity t_2 const1;
+
+Innermost loop: t_2 = >, <, <=, >=, = , 
+5 statements
+
+Next loop: t_1 = >, <, <=, >=, = , 
+25 statements
+
+Next loop: const1 = 1, 1 + 0.08167, 1 + 0.16334, 1.245, 1.32666666667, 1.40833333333, 1.49, 1.57166666667, ... , 41.8333333333
+25 x 5000 =  statements
+
+Outer loop: const2 = 18242.4166667, 18243.4166667, ... 
+25 x 5000 x 5000 statements
+
+
