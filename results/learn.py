@@ -8,7 +8,7 @@ from sklearn.linear_model import Ridge
 
 from sklearn import metrics
 
-datafiles = ["skylake/vecbench.txt"] #, "skylake/hashbench.txt", "armA57/vecbench.txt", "armA57/hashbench.txt"]
+datafiles = ["skylake/vecbench.txt", "armA57/vecbench.txt"]
 
 
 for file in datafiles:
