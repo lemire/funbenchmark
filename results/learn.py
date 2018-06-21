@@ -59,7 +59,7 @@ for file in datafiles:
   dataset["N1_2"]=dataset["N1"]**2
   dataset["N2_2"]=dataset["N2"]**2
   dataset["computedcard"]= dataset["N1"]+dataset["N2"]-dataset["N1"]*dataset["N2"]/dataset["U"]
-  predictor = ["computedcard","N1","N2","U","N1_2","N2_2"]
+  predictor = ["computedcard","N1","N2","U"]
   X=dataset[predictor]
   y = dataset[["time"]].iloc[:,0]
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
@@ -73,7 +73,7 @@ for file in datafiles:
   print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
   print('relative Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred)/y_test.mean())
   f = plt.figure()
-  plt.title(file+" (ah predictor)")
+  plt.title(file+" (computed cardinality predictor)")
   plt.scatter(y_test, y_pred)
   plt.scatter(y_test, y_test)
   plt.ylim([y.min(), y.max()])
@@ -85,7 +85,7 @@ for file in datafiles:
     os.remove(filename)
   f.savefig(filename, bbox_inches='tight')
   print(filename)
-  filename = file+"ah.png"
+  filename = file+"computed.png"
   if(os.path.exists(filename)):
     os.remove(filename)
   f.savefig(filename, bbox_inches='tight')
